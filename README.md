@@ -92,22 +92,36 @@ Los modelos fueron entrenados y posteriormente exportados para su ejecución en 
 
 ## Flujo general del sistema
 
-Aplicación → Raspberry Pi / ROS2 → ESP32 → Actuadores y sistema de corte
+`Aplicación → Raspberry Pi / ROS2 → ESP32 → Actuadores y sistema de corte`
 
-El sistema de percepción sigue el flujo:
+Sistema de percepción:
 
-Cámara → Visión Artificial → Raspberry Pi → Navegación y toma de decisiones
+`Cámara → Visión Artificial → Raspberry Pi → Navegación y toma de decisiones`
 
 ## Estructura del repositorio
 
+~~~text
 autonomous-lawn-mower-robot/
 ├── app/
 ├── docs/
+│   └── Project_Report.ipynb
 ├── firmware/
+│   ├── include/
+│   ├── src/
+│   └── platformio.ini
 ├── raspberry-pi/
+│   ├── pkg_actuadores/
+│   ├── pkg_bringup/
+│   ├── pkg_esp32_bridge/
+│   ├── pkg_navegacion/
+│   ├── pkg_sensores/
+│   └── pkg_vision/
 ├── vision/
-├── README.md
-└── LICENSE
+│   ├── models/
+│   └── training-models/
+├── LICENSE
+└── README.md
+~~~
 
 ## Firmware
 
@@ -115,7 +129,7 @@ El código correspondiente al ESP32 se encuentra en:
 
 `firmware/`
 
-Incluye los módulos responsables del control de motores, sensores, seguridad, batería, sistema de corte y comunicación.
+Incluye módulos independientes para el control de motores, sensores, seguridad, batería, sistema de corte y comunicación con la Raspberry Pi.
 
 ## Raspberry Pi
 
@@ -123,7 +137,7 @@ Los paquetes y nodos ROS2 se encuentran en:
 
 `raspberry-pi/`
 
-El software está organizado por funcionalidades como navegación, sensores, actuadores, visión y comunicación con el ESP32.
+El software está organizado por funcionalidades de navegación, sensores, actuadores, visión y comunicación con el ESP32.
 
 ## Aplicación
 
@@ -133,7 +147,7 @@ El código de la aplicación Flutter se encuentra en:
 
 ## Visión Artificial
 
-Los nodos y modelos utilizados para percepción del entorno se encuentran en:
+Los nodos y modelos utilizados para la percepción del entorno se encuentran en:
 
 `vision/`
 
@@ -145,10 +159,10 @@ La documentación técnica del proyecto se encuentra en:
 
 ## Autor
 
-Victor Gabriel Curiel Gonzalez
-Ximena Lujan Quenhan Riveros
-Judith Giselle Jacquet Boschi
-Fabrizzio Sebastian Bianchini Morel
+Victor Gabriel Curiel Gonzalez 
+Judith Giselle Jacquet Boschi  
+Fabrizzio Sebastian Bianchini Morel  
+Ximena Lujan Quenhan Riveros  
 
 Universidad Nacional de Asunción  
 Facultad de Ingeniería  
