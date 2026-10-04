@@ -157,7 +157,7 @@ La documentación técnica del proyecto se encuentra en:
 
 `docs/Project_Report.ipynb`
 
-## Autor
+## Autores
 
 Victor Gabriel Curiel Gonzalez 
 Judith Giselle Jacquet Boschi  
