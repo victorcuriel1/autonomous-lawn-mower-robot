@@ -1,0 +1,55 @@
+name: captainpingui_app
+description: "App de control para el robot cortacésped Captain Pingui."
+
+# Evita publicación accidental en pub.dev
+publish_to: 'none'
+
+# Versión visible + número de build interno
+# Formato: mayor.menor.parche+build
+version: 4.1.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Íconos estilo iOS - viene por default
+  cupertino_icons: ^1.0.8
+  # Dependencia para mostrar streams MJPEG (video en vivo desde Raspberry Pi)
+  mjpeg_view: ^1.0.1
+  # Mapa OpenStreetMap para visualizar GPS y definir cercos virtuales
+  flutter_map: ^8.2.2
+  # Tipo LatLng usado por flutter_map
+  latlong2: ^0.9.1
+  # Para manejar conexiones WebSocket (comunicación en tiempo real con el backend)
+  web_socket_channel: ^2.2.0 
+  # Guarda configuración local como modo debug, IP y puertos
+  shared_preferences: ^2.3.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Genera automáticamente los íconos de la app en todos los tamaños
+  flutter_launcher_icons: ^0.14.1
+  # Análisis de código para mantener buenas praxis y evitar errores
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Archivos de imagen/audio
+  assets:
+    - assets/images/loadingScreen.png
+    - assets/images/logo.png
+    - assets/images/offboard.png
+    - assets/images/blade.png
+    - assets/images/trimmer.png
+
+  # Si se añaden fuentes, luego ejecutar flutter pub get para actualizar
+  
+# Configuración del generador de íconos
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
